@@ -1,0 +1,274 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.chart.CategoryAxis?>
+<?import javafx.scene.chart.LineChart?>
+<?import javafx.scene.chart.NumberAxis?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.shape.Circle?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
+   <bottom>
+      <Pane prefHeight="23.0" prefWidth="600.0" style="-fx-background-color: #e0dcd1;" BorderPane.alignment="CENTER">
+         <children>
+            <Label layoutX="611.0" layoutY="4.0" text="Пользователь:" />
+            <Label layoutX="717.0" layoutY="4.0" text="user_name" />
+         </children></Pane>
+   </bottom>
+   <center>
+      <TabPane prefHeight="200.0" prefWidth="200.0" tabClosingPolicy="UNAVAILABLE" BorderPane.alignment="CENTER">
+        <tabs>
+          <Tab text="Отчет">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <SplitPane dividerPositions="0.29797979797979796" prefHeight="545.0" prefWidth="800.0">
+                          <items>
+                            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
+                                 <children>
+                                    <TextField disable="true" editable="false" layoutX="20.0" layoutY="205.0" prefHeight="26.0" prefWidth="183.0" promptText="Кол-во шок. в партии" />
+                                    <TextField disable="true" layoutX="20.0" layoutY="171.0" prefHeight="26.0" prefWidth="183.0" promptText="Время производства" />
+                                    <TextField disable="true" layoutX="20.0" layoutY="137.0" prefHeight="26.0" prefWidth="183.0" promptText="Тип упаковки" />
+                                    <Button layoutX="20.0" layoutY="335.0" mnemonicParsing="false" text="Добавить в отчет" />
+                                    <Button layoutX="20.0" layoutY="259.0" mnemonicParsing="false" text="Сохранить" />
+                                    <Button layoutX="20.0" layoutY="297.0" mnemonicParsing="false" text="Отправить" />
+                                    <TextField layoutX="20.0" layoutY="29.0" prefHeight="26.0" prefWidth="184.0" promptText="Кол-во партий" />
+                                    <DatePicker layoutX="20.0" layoutY="66.0" prefHeight="26.0" prefWidth="183.0" promptText="Окончание периода" />
+                                    <DatePicker layoutX="20.0" layoutY="103.0" prefHeight="26.0" prefWidth="183.0" promptText="Начало периода" />
+                                 </children>
+                              </AnchorPane>
+                            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
+                                 <children>
+                                    <TableView layoutX="-1.0" layoutY="284.0" prefHeight="259.0" prefWidth="557.0">
+                                      <columns>
+                                        <TableColumn prefWidth="75.0" text="C1" />
+                                        <TableColumn prefWidth="75.0" text="C2" />
+                                      </columns>
+                                    </TableView>
+                                    <LineChart layoutX="1.0" layoutY="1.0" prefHeight="271.0" prefWidth="551.0">
+                                      <xAxis>
+                                        <CategoryAxis side="BOTTOM" />
+                                      </xAxis>
+                                      <yAxis>
+                                        <NumberAxis side="LEFT" />
+                                      </yAxis>
+                                    </LineChart>
+                                    <Label layoutX="110.0" layoutY="258.0" text="График зависимости объема партии от времени производства">
+                                       <font>
+                                          <Font size="10.0" />
+                                       </font>
+                                    </Label>
+                                 </children>
+                              </AnchorPane>
+                          </items>
+                        </SplitPane>
+                     </children></AnchorPane>
+            </content>
+          </Tab>
+          <Tab text="Подгот. шок.">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <SplitPane dividerPositions="0.2756892230576441" prefHeight="545.0" prefWidth="800.0">
+                          <items>
+                            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="543.0" prefWidth="228.0">
+                                 <children>
+                                    <ComboBox layoutX="9.0" layoutY="30.0" prefHeight="26.0" prefWidth="188.0" promptText="Партия" />
+                                    <TextField layoutX="9.0" layoutY="67.0" prefHeight="26.0" prefWidth="141.0" promptText="Температура" />
+                                    <TextField layoutX="9.0" layoutY="104.0" prefHeight="26.0" prefWidth="141.0" promptText="Скорость воспр." />
+                                    <TextField layoutX="10.0" layoutY="142.0" prefHeight="26.0" prefWidth="186.0" promptText="Размер порции" />
+                                    <Button layoutX="103.0" layoutY="180.0" mnemonicParsing="false" text="Сохранить" />
+                                    <Label layoutX="156.0" layoutY="72.0" text="°C" />
+                                    <Label layoutX="158.0" layoutY="109.0" text="об./мин." />
+                                 </children>
+                              </AnchorPane>
+                            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
+                                 <children>
+                                    <TableView prefHeight="543.0" prefWidth="585.0">
+                                      <columns>
+                                        <TableColumn prefWidth="75.0" text="C1" />
+                                        <TableColumn prefWidth="75.0" text="C2" />
+                                      </columns>
+                                    </TableView>
+                                 </children>
+                              </AnchorPane>
+                          </items>
+                        </SplitPane>
+                     </children></AnchorPane>
+            </content>
+          </Tab>
+            <Tab text="Утверд. орехи">
+               <content>
+                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <SplitPane dividerPositions="0.2670886075949367" prefHeight="543.0" prefWidth="800.0">
+                          <items>
+                            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="555.0" prefWidth="252.0">
+                                 <children>
+                                    <ComboBox layoutX="9.0" layoutY="30.0" prefHeight="26.0" prefWidth="188.0" promptText="Партия" />
+                                    <TextField layoutX="9.0" layoutY="67.0" prefHeight="26.0" prefWidth="134.0" promptText="Объем орехов" />
+                                    <TextField layoutX="10.0" layoutY="102.0" prefHeight="26.0" prefWidth="185.0" promptText="Тип измельчения" />
+                                    <TextField layoutX="10.0" layoutY="138.0" prefHeight="26.0" prefWidth="184.0" promptText="Размер изм. орехов" />
+                                    <Button layoutX="88.0" layoutY="174.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="107.0" text="Сохранить" />
+                                    <Label layoutX="152.0" layoutY="72.0" text="кг." />
+                                 </children>
+                              </AnchorPane>
+                            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="112.0" prefWidth="125.0">
+                                 <children>
+                                    <TableView prefHeight="540.0" prefWidth="581.0">
+                                      <columns>
+                                        <TableColumn prefWidth="75.0" text="C1" />
+                                        <TableColumn prefWidth="75.0" text="C2" />
+                                      </columns>
+                                    </TableView>
+                                 </children>
+                              </AnchorPane>
+                          </items>
+                        </SplitPane>
+                     </children>
+                  </AnchorPane>
+               </content>
+            </Tab>
+            <Tab text="Упаковка">
+               <content>
+                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <SplitPane dividerPositions="0.2631578947368421" prefHeight="545.0" prefWidth="800.0">
+                          <items>
+                            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="543.0" prefWidth="233.0">
+                                 <children>
+                                    <ComboBox layoutX="9.0" layoutY="30.0" prefHeight="26.0" prefWidth="188.0" promptText="Партия" />
+                                    <TextField layoutX="9.0" layoutY="66.0" prefHeight="26.0" prefWidth="187.0" promptText="Тип упаковки" />
+                                    <TextField layoutX="9.0" layoutY="101.0" prefHeight="26.0" prefWidth="185.0" promptText="Выходные дан. партии" />
+                                    <Button layoutX="102.0" layoutY="138.0" mnemonicParsing="false" text="Сохранить" />
+                                 </children>
+                              </AnchorPane>
+                            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="543.0" prefWidth="616.0">
+                                 <children>
+                                    <TableView layoutX="-1.0" prefHeight="548.0" prefWidth="587.0">
+                                      <columns>
+                                        <TableColumn prefWidth="75.0" text="C1" />
+                                        <TableColumn prefWidth="75.0" text="C2" />
+                                      </columns>
+                                    </TableView>
+                                 </children>
+                              </AnchorPane>
+                          </items>
+                        </SplitPane>
+                     </children>
+                  </AnchorPane>
+               </content>
+            </Tab>
+            <Tab text="Взбив. сливок">
+               <content>
+                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <SplitPane dividerPositions="0.2656641604010025" prefHeight="545.0" prefWidth="800.0">
+                          <items>
+                            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="543.0" prefWidth="211.0">
+                                 <children>
+                                    <ComboBox layoutX="9.0" layoutY="30.0" prefHeight="26.0" prefWidth="188.0" promptText="Партия" />
+                                    <TextField layoutX="9.0" layoutY="65.0" prefHeight="26.0" prefWidth="136.0" promptText="Время сбивания" />
+                                    <TextField layoutX="9.0" layoutY="101.0" prefHeight="26.0" prefWidth="136.0" promptText="Интенсивность сбив." />
+                                    <TextField layoutX="9.0" layoutY="137.0" prefHeight="26.0" prefWidth="186.0" promptText="Кол-во сливок" />
+                                    <Button layoutX="87.0" layoutY="172.0" mnemonicParsing="false" text="Подтвердить" />
+                                    <Label layoutX="152.0" layoutY="70.0" text="мин." />
+                                    <Label layoutX="152.0" layoutY="106.0" text="об./мин." />
+                                 </children>
+                              </AnchorPane>
+                            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
+                                 <children>
+                                    <TableView layoutY="-1.0" prefHeight="546.0" prefWidth="583.0">
+                                      <columns>
+                                        <TableColumn prefWidth="75.0" text="C1" />
+                                        <TableColumn prefWidth="75.0" text="C2" />
+                                      </columns>
+                                    </TableView>
+                                 </children>
+                              </AnchorPane>
+                          </items>
+                        </SplitPane>
+                     </children>
+                  </AnchorPane>
+               </content>
+            </Tab>
+            <Tab text="Наполн. шок.">
+               <content>
+                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <SplitPane dividerPositions="0.2669172932330827" prefHeight="545.0" prefWidth="800.0">
+                          <items>
+                            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
+                                 <children>
+                                    <ComboBox layoutX="9.0" layoutY="31.0" prefWidth="188.0" promptText="Партия" />
+                                    <TextField layoutX="9.0" layoutY="67.0" prefHeight="26.0" prefWidth="188.0" promptText="Вкус" />
+                                    <ComboBox layoutX="9.0" layoutY="102.0" prefHeight="26.0" prefWidth="188.0" promptText="Консистенция" />
+                                    <TextField layoutX="9.0" layoutY="138.0" prefHeight="26.0" prefWidth="187.0" promptText="Кол-во на одну порцию" />
+                                    <Button layoutX="128.0" layoutY="176.0" mnemonicParsing="false" text="Задать" />
+                                 </children>
+                              </AnchorPane>
+                            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="543.0" prefWidth="556.0">
+                                 <children>
+                                    <TableView prefHeight="545.0" prefWidth="582.0">
+                                      <columns>
+                                        <TableColumn prefWidth="75.0" text="C1" />
+                                        <TableColumn prefWidth="75.0" text="C2" />
+                                      </columns>
+                                    </TableView>
+                                 </children>
+                              </AnchorPane>
+                          </items>
+                        </SplitPane>
+                     </children>
+                  </AnchorPane>
+               </content>
+            </Tab>
+            <Tab text="Заявка">
+               <content>
+                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <ComboBox layoutX="24.0" layoutY="28.0" prefHeight="26.0" prefWidth="171.0" promptText="Сырье" />
+                        <TextField layoutX="24.0" layoutY="67.0" promptText="Количество" />
+                        <DatePicker layoutX="24.0" layoutY="105.0" prefHeight="26.0" prefWidth="171.0" promptText="Дата" />
+                        <Button layoutX="103.0" layoutY="139.0" mnemonicParsing="false" text="Отправить" />
+                     </children>
+                  </AnchorPane>
+               </content>
+            </Tab>
+        </tabs>
+      </TabPane>
+   </center>
+   <top>
+      <Pane prefHeight="106.0" prefWidth="800.0" BorderPane.alignment="CENTER">
+         <children>
+            <Circle fill="WHITE" layoutX="54.0" layoutY="47.0" radius="33.0" stroke="BLACK" strokeType="INSIDE" />
+            <Label layoutX="20.0" layoutY="85.0" text="Подготовка" />
+            <Circle fill="WHITE" layoutX="181.0" layoutY="47.0" radius="33.0" stroke="BLACK" strokeType="INSIDE" />
+            <Label layoutX="148.0" layoutY="85.0" text="Утверд. орех" />
+            <Circle fill="WHITE" layoutX="313.0" layoutY="46.0" radius="33.0" stroke="BLACK" strokeType="INSIDE" />
+            <Label layoutX="281.0" layoutY="85.0" text="Наполн. шок." />
+            <Circle fill="WHITE" layoutX="451.0" layoutY="46.0" radius="33.0" stroke="BLACK" strokeType="INSIDE" />
+            <Label layoutX="415.0" layoutY="84.0" text="Взбив. сливок" />
+            <Circle fill="WHITE" layoutX="583.0" layoutY="46.0" radius="33.0" stroke="BLACK" strokeType="INSIDE" />
+            <Label layoutX="555.0" layoutY="84.0" text="Упаковка" />
+            <Line endX="-49.0" endY="-6.0" layoutX="197.0" layoutY="53.0" startX="-110.0" startY="-6.0" />
+            <Line endX="-45.0" endY="-6.0" layoutX="325.0" layoutY="52.0" startX="-110.0" startY="-6.0" />
+            <Line endX="-47.0" endY="-6.0" layoutX="465.0" layoutY="52.0" startX="-119.0" startY="-6.0" />
+            <Line endX="-54.0" endY="-5.0" layoutX="604.0" layoutY="53.0" startX="-119.0" startY="-5.0" />
+         </children>
+      </Pane>
+   </top>
+</BorderPane>
